@@ -1,15 +1,69 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-  </view>
-  <view class="usermotto">
+  </view> -->
+<!-- <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-  </view>
-<view>{{ msg }}</view>
-<button bindtap="clickMe">点击我</button>
+  </view> -->
+
+
+
+
+<!-- <view>{{ msg }}</view>
+<button bindtap="clickMe">点击我</button> -->
+<!-- </view> -->
+
+<!-- 
+<view class="section" id="Design">
+  <section>
+    <tr>
+      <td>UI/平面设计、视频制作</td>
+      <td>
+        <p>海报、网页UI设计；视频剪辑后期制作</p>
+      </td>
+      <td>
+        <button data-seed="career-apply-ui" class="button" className="btn btn-default btn-apply" style="font-size:14px;font-weight: bold;">点击申请</button>
+      </td>
+    </tr>
+  </section>
+
+  <section>
+    <tr>
+      <td>教育顾问</td>
+      <td>
+        <p>了解用户需求，参与课程设计</p>
+      </td>
+      <td>
+        <button class="button">点击申请</button>
+      </td>
+    </tr>
+  </section>
+</view> -->
+
+<view class="table">
+  <block wx:for="{{jobData}}" wx:key="{{position}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td1">{{item.position}}</view>
+      <view class="td2">{{item.text}}</view>
+      <button class="button">点击申请</button>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td1">{{item.position}}</view>
+      <view class="td2">{{item.text}}</view>
+      <button class="button" bindtap='showPopup'>点击申请</button>
+    </view>
+  </block>
+</view>
+
+<view class="container">
+  <!-- <view class="userinfo">
+    <button bindtap="showPopup"> 点我 </button>
+  </view> -->
+  <popup id='popup' title='小组件' content='学会了吗' btn_no='没有' btn_ok='学会了' bind:error="_error" bind:success="_success">
+  </popup>
 </view>
