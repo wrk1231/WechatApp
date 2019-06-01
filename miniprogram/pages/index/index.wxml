@@ -64,6 +64,6 @@
   <!-- <view class="userinfo">
     <button bindtap="showPopup"> 点我 </button>
   </view> -->
-  <popup id='popup' title='小组件' content='学会了吗' btn_no='没有' btn_ok='学会了' bind:error="_error" bind:success="_success">
+  <popup id='popup' title='提交申请' content='申请栏' btn_no='取消' btn_ok='提交' bind:error="_error" bind:success="_success">
   </popup>
 </view>
